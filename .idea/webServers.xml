@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7fb4a86c-bfd9-473e-a0fd-22f02f3471e0" name="ftp://39.100.206.135:21" url="http://d.heephp.com">
+        <fileTransfer host="39.100.206.135" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
