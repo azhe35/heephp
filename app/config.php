@@ -12,13 +12,17 @@ return [
     'success_page'=>'message/sysSuccess.php',
     'error_page'=>'message/sysError.php',
     'validata_code_session'=>'_validata_code_session_',//验证码的Session字段
+    'template'=>[
+        'diver'=>'smarty',
+        'ext'=>'html',
+    ],
     'db'=>[
         'diver'=>'mysqli',
         'db_host' => 'localhost',
         'db_port' => '3306',
-        'db_username' => '',
-        'db_password' => '',
-        'db_name' => '',
+        'db_username' => 'root',
+        'db_password' => '123456',
+        'db_name' => 'heeapi',
         'table_prefix'=>'',
         'charset'=>'utf8',
         'timeformat'=>'Y-m-d H:i:s',

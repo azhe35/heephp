@@ -25,29 +25,518 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3611cfd8-ff4e-433d-8702-dec0ac60baa4" name="默认更改列表" comment="v3.39">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/.user.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/heephpTemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/SECURITY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/configs/test.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/cacheresource.apc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/cacheresource.memcache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/cacheresource.mysql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/cacheresource.pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/cacheresource.pdo_gzip.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/resource.extendsall.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/resource.mysql.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/plugins/resource.mysqls.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/templates/footer.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/templates/header.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/demo/templates/index.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/_config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/appendixes/tips.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/appendixes/troubleshooting.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/chapter-debugging-console.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/config-files.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax/language-escaping.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax/language-math.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax/language-syntax-attributes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax/language-syntax-comments.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax/language-syntax-functions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax/language-syntax-quotes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-basic-syntax/language-syntax-variables.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-append.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-assign.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-block.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-call.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-capture.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-config-load.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-debug.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-extends.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-for.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-foreach.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-function.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-if.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-include-php.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-include.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-insert.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-ldelim.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-literal.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-nocache.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-section.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-setfilter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-shortform-assign.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-strip.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-builtin-functions/language-function-while.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-combining-modifiers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-counter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-cycle.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-debug.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-eval.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-fetch.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-html-checkboxes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-html-image.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-html-options.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-html-radios.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-html-select-date.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-html-select-time.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-html-table.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-mailto.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-math.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-custom-functions/language-function-textformat.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-capitalize.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-cat.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-count-characters.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-count-paragraphs.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-count-sentences.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-count-words.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-date-format.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-default.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-escape.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-from-charset.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-indent.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-lower.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-nl2br.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-regex-replace.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-replace.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-spacify.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-string-format.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-strip-tags.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-strip.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-to-charset.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-truncate.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-unescape.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-upper.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-modifiers/language-modifier-wordwrap.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-variables.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-variables/language-assigned-variables.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-variables/language-config-variables.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-variables/language-variable-scopes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/designers/language-variables/language-variables-smarty.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/features.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/getting-started.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/philosophy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-objects.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-outputfilters.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-postfilters.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-prefilters.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-security.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-static-classes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-streams.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-template-inheritance.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/advanced-features/advanced-features-template-settings.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-add-config-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-add-plugins-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-add-template-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-append-by-ref.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-append.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-assign-by-ref.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-assign.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-clear-all-assign.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-clear-all-cache.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-clear-assign.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-clear-cache.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-clear-compiled-tpl.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-clear-config.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-compile-all-config.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-compile-all-templates.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-config-load.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-create-data.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-create-template.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-disable-security.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-display.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-enable-security.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-fetch.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-cache-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-compile-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-config-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-config-vars.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-plugins-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-registered-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-tags.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-template-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-get-template-vars.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-is-cached.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-load-filter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-mute-expected-errors.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-register-cacheresource.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-register-class.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-register-default-plugin-handler.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-register-filter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-register-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-register-plugin.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-register-resource.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-set-cache-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-set-compile-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-set-config-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-set-plugins-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-set-template-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-template-exists.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-test-install.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-unregister-cacheresource.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-unregister-filter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-unregister-object.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-unregister-plugin.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-functions/api-unregister-resource.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-allow-php-templates.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-auto-literal.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-autoload-filters.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-cache-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-cache-id.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-cache-lifetime.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-cache-locking.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-cache-modified-check.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-caching-type.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-caching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-compile-check.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-compile-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-compile-id.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-compile-locking.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-compiler-class.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-config-booleanize.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-config-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-config-overwrite.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-config-read-hidden.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-debug-template.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-debugging-ctrl.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-debugging.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-default-config-handler-func.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-default-config-type.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-default-modifiers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-default-resource-type.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-default-template-handler-func.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-direct-access-security.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-error-reporting.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-escape-html.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-force-cache.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-force-compile.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-left-delimiter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-locking-timeout.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-merge-compiled-includes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-php-handling.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-plugins-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-right-delimiter.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-smarty-debug-id.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-template-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-trusted-dir.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-use-include-path.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/api-variables/variable-use-sub-dirs.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/caching.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/caching/caching-cacheable.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/caching/caching-custom.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/caching/caching-groups.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/caching/caching-multiple-caches.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/caching/caching-setting-up.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/charset.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-block-functions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-compiler-functions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-functions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-howto.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-inserts.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-modifiers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-naming-conventions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-outputfilters.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-prefilters-postfilters.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-resources.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/plugins/plugins-writing.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/resources.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/resources/resources-custom.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/resources/resources-extends.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/resources/resources-file.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/resources/resources-streams.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/resources/resources-string.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/resources/template-resources.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/docs/programmers/smarty-constants.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/lexer/smarty_internal_configfilelexer.plex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/lexer/smarty_internal_configfileparser.y" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/lexer/smarty_internal_templatelexer.plex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/lexer/smarty_internal_templateparser.y" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/Autoloader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/Smarty.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/debug.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/block.textformat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.counter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.cycle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.fetch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.html_checkboxes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.html_image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.html_options.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.html_radios.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.html_select_date.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.html_select_time.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.html_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.mailto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/function.math.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.capitalize.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.date_format.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.debug_print_var.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.escape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.mb_wordwrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.regex_replace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.replace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.spacify.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifier.truncate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.cat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.count_characters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.count_paragraphs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.count_sentences.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.count_words.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.default.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.escape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.from_charset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.indent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.lower.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.noprint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.string_format.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.strip.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.strip_tags.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.to_charset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.unescape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.upper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/modifiercompiler.wordwrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/outputfilter.trimwhitespace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/shared.escape_special_chars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/shared.literal_compiler_param.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/shared.make_timestamp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/shared.mb_str_replace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/shared.mb_unicode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/plugins/variablefilter.htmlspecialchars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_cacheresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_cacheresource_custom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_cacheresource_keyvaluestore.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_cacheresource_file.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_append.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_assign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_block_child.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_block_parent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_break.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_call.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_capture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_child.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_config_load.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_continue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_debug.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_eval.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_extends.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_for.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_foreach.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_if.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_include.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_insert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_ldelim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_make_nocache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_nocache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_parent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_block_plugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_foreachsection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_function_plugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_modifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_object_block_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_object_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_print_expression.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_registered_block.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_registered_function.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_private_special_variable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_rdelim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_section.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_setfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_shared_inheritance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compile_while.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_compilebase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_config_file_compiler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_configfilelexer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_configfileparser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_debug.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_errorhandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_extension_handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_addautoloadfilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_adddefaultmodifiers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_append.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_appendbyref.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_assignbyref.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_assignglobal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_clearallassign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_clearallcache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_clearassign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_clearcache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_clearcompiledtemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_clearconfig.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_compileallconfig.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_compilealltemplates.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_configload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_createdata.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getautoloadfilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getconfigvariable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getconfigvars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getdebugtemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getdefaultmodifiers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getglobal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getregisteredobject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_getstreamvariable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_gettags.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_gettemplatevars.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_literals.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_loadfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_loadplugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_mustcompile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registercacheresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerclass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerdefaultconfighandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerdefaultpluginhandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerdefaulttemplatehandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerobject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerplugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_registerresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_setautoloadfilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_setdebugtemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_setdefaultmodifiers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_unloadfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_unregistercacheresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_unregisterfilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_unregisterobject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_unregisterplugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_method_unregisterresource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_nocache_insert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_parsetree.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_parsetree_code.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_parsetree_dq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_parsetree_dqcontent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_parsetree_tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_parsetree_template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_parsetree_text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_resource_eval.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_resource_extends.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_resource_file.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_resource_php.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_resource_stream.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_resource_string.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_cachemodify.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_cacheresourcefile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_capture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_codeframe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_filterhandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_foreach.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_getincludepath.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_inheritance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_make_nocache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_tplfunction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_updatecache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_updatescope.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_runtime_writefile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_smartytemplatecompiler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_templatebase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_templatecompilerbase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_templatelexer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_templateparser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_testinstall.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_internal_undefined.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_resource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_resource_custom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_resource_recompiled.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_resource_uncompiled.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_security.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_template_cached.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_template_compiled.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_template_config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_template_resource_base.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_template_source.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_undefined_variable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smarty_variable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smartycompilerexception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smarty/libs/sysplugins/smartyexception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/smartyTemplate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/heephp/template/templateInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/heephp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/heephp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2021_9_5_9_11____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2021_9_5_9_11_取消提交了变更_[默认更改列表]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index/controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index/controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heephp/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/heephp/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heephp/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/heephp/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heephp/heephp.php" beforeDir="false" afterPath="$PROJECT_DIR$/heephp/heephp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heephp/message/trace.php" beforeDir="false" afterPath="$PROJECT_DIR$/heephp/message/trace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heephp/trace.php" beforeDir="false" afterPath="$PROJECT_DIR$/heephp/trace.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.user.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/nginx.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/nginx.htaccess" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1nEjLx4d9w2D4iPGQRXbOzksfS9" />
   <component name="ProjectLevelVcsManager">
@@ -59,11 +548,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shangpin" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\heephp\heephp\template" />
+      <recent name="D:\projects\heephp\vendor" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,7 +580,14 @@
       <workItem from="1613250347398" duration="16000" />
       <workItem from="1615456738706" duration="38000" />
       <workItem from="1630776971104" duration="36000" />
-      <workItem from="1630804166813" duration="1297000" />
+      <workItem from="1630804166813" duration="1826000" />
+      <workItem from="1631980003938" duration="656000" />
+      <workItem from="1632043737668" duration="152000" />
+      <workItem from="1643845013398" duration="1446000" />
+      <workItem from="1643901673520" duration="121000" />
+      <workItem from="1643902992321" duration="1179000" />
+      <workItem from="1643904197201" duration="1519000" />
+      <workItem from="1643956079649" duration="12457000" />
     </task>
     <task id="LOCAL-00001" summary="v3.37">
       <created>1612582586816</created>
@@ -227,5 +732,9 @@
     <MESSAGE value="v3.38" />
     <MESSAGE value="v3.39" />
     <option name="LAST_COMMIT_MESSAGE" value="v3.39" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

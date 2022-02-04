@@ -1,87 +1,73 @@
 <?php
 namespace heephp;
-use heephp\sysExcption;
+use heephp\template\heephpTemplate;
+use heephp\template\smartyTemplate;
+use heephp\template\templateInterface;
 
 class controller{
 
-    protected $_pagevar = array();
-    protected $_trace = true;
+    protected $_pagevar = [];
+    private  $tempdriver;
+    private $conf;//模板配置
+    private $tempext;//模板扩展名
 
     public function  __construct()
     {
+        $this->conf=config("template");
+        $temptype = $this->conf['diver'];
+        $this->tempext = $this->conf['ext'];
+
+        if( $temptype=='heephp'){
+            $this->tempdriver = new heephpTemplate();
+        }else if($temptype=='smarty'){
+            $this->tempdriver = new smartyTemplate();
+
+        }else
+        {
+            throw new sysExcption("未知的模板引擎：".$this->temptype);
+        }
+
         aop('controller_init');
 
     }
 
     public function assign($name,$value){
         $this->_pagevar[]=[$name=>$value];
+        $this->tempdriver->assign($name,$value);
     }
 
     public function fetch($viewpage=''){
-        $viewpage=empty($viewpage)?METHOD:$viewpage;
-        $viewPagePath = '';
-        $otherdir = strpos($viewpage,'/')>-1;
 
         //判断是否是否使用独立目录
-        $skindir = config('skin_dir');
-        $skindir = empty($skindir)?'':($skindir.'/');
+        $template_dir = $this->conf['dir'];
+        $template_dir = empty($template_dir)?'':($template_dir.'/');
 
-        //判断是否使用皮肤
-        $skin = config('skin');
-        $skin = empty($skin)?'':($skin.'/');
+        $viewpage = empty($viewpage) ? METHOD : $viewpage;
 
-        if(!empty($skindir)){
-
-            //如果使用了指定目录
-            if($otherdir)
-                $viewPagePath = './../'.$skindir.$skin. $viewpage . '.php';
+        if ($template_dir != '')
+            $template_dir = './../' . $template_dir. CONTROLLER . '/';
+        else {
+            if (APPS)
+                $template_dir = './../app/' . APP . '/view/'. CONTROLLER . '/';
             else
-                $viewPagePath = './../'.$skindir.$skin. CONTROLLER . '/' . $viewpage . '.php';
-
-        }else if(APPS) {
-            //多应用
-            if ($otherdir)
-                $viewPagePath = './../app/' . APP . '/view/' .$skin. $viewpage . '.php';
-            else
-                $viewPagePath = './../app/' . APP . '/view/' .$skin. CONTROLLER . '/' . $viewpage . '.php';
-        }else{
-            //单应用
-            if ($otherdir)
-                $viewPagePath = './../app/view/' .$skin. $viewpage . '.php';
-            else
-                $viewPagePath = './../app/view/'.CONTROLLER.'/'.$skin.$viewpage.'.php';
-        }
-        if(!is_file($viewPagePath)){
-            throw new sysExcption( '模板文件'.$viewPagePath.'不存在！');
-            exit;
-        }
-        //取出变量
-        foreach ($this->_pagevar as $k=>$v){
-            foreach ($v as $a=>$b){
-                $$a=$b;
-            }
+                $template_dir = './../app/view/'. CONTROLLER . '/';
         }
 
-        ob_start();
+        $viewpage=$viewpage.'.'.$this->tempext;
 
-        include $viewPagePath;
         //调用调试
-        if($this->_trace)
-            trace::page_trace();
+        trace::page_trace();
 
-        $content = ob_get_contents();
-        ob_end_clean();
 
-        //html字符替换
-        $html_replace = config('html_replace');
-        if(is_array($html_replace)&&count($html_replace)>0) {
-            foreach ($html_replace as $k => $v) {
-                $content = str_replace($k, $v, $content);
-            }
+        if (!is_file($template_dir.$viewpage)) {
+            throw new sysExcption('模板文件' . $template_dir.$viewpage . '不存在！');
         }
 
-        return $content;
+        return $this->tempdriver->fetch($template_dir,$viewpage);
+
     }
+
+
 
     public function json($data){
         header("Content-Type: json/application; charset=UTF-8");

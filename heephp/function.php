@@ -441,7 +441,7 @@ function db()
     if ($dbconfig['diver'] == 'pdo')
         $db = new \heephp\database\pdo('mysql:host=' . $dbconfig['db_host'] . ';database=' . $dbconfig['db_name'] . ';', $dbconfig['db_username'], $dbconfig['db_password']);
     else
-        $db = new \heephp\database\mysqli($dbconfig['db_host'], $dbconfig['db_port'], $dbconfig['db_username'], $dbconfig['db_password'], $dbconfig['db_name'], $dbconfig['charset'], $config['pagesize']);
+        $db = new \heephp\database\mysqli($dbconfig['db_host'], $dbconfig['db_port'], $dbconfig['db_username'], $dbconfig['db_password'], $dbconfig['db_name'], $dbconfig['charset'], config('pagesize'));
 
     return $db;
 }

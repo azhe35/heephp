@@ -1,6 +1,7 @@
 <?php
 namespace heephp;
 
+error_reporting(E_ERROR | E_PARSE);
 define('SOFTNAME','heephp');
 define('VERSION','3.38');
 define('ROOT',dirname($_SERVER["DOCUMENT_ROOT"]));

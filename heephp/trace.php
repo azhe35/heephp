@@ -22,7 +22,12 @@ class trace{
             $sqls = trace::$sqls;
             //加载显示完成后 清空记录
             trace::$sqls=[];
+
+            ob_start();
             include 'message/trace.php';
+            $content = ob_get_contents();
+            ob_end_clean();
+            echo $content;
         }
     }
 
