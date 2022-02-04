@@ -1,11 +1,13 @@
 # heephp框架 
 
 基于php7.3+版本开发的 mvc框架。
+最新V5 已经支持php8.0
+
 ## 简单快速
 对比Thinkphp Laravel 等框架有：\
 快速上手、数据缓存、运行快速、\
 框架升级不影响程序本身，\
-采用原生Php模板、\
+默认采用Smarty模板引擎，可选原生Php模板\
 ORM、自动关联模型、\
 自动验证、\
 简单路由、\
@@ -32,5 +34,4 @@ php7.3+ mvc mysql sqlite 数据缓存可使用 文件、redis、memcache
 #### 相关链接
 
 1.  [heephp网站](http://www.heephp.cn)
-2.  [文件教程](https://heephp.github.io/heephp)
-3.  [常见问题](http://doc.heephp.cn)
+2.  [常见问题](http://doc.heephp.cn)
