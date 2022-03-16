@@ -6,7 +6,7 @@ use heephp\template\templateInterface;
 
 class controller{
 
-    protected $_pagevar = [];
+    //protected $_pagevar = [];
     private  $tempdriver;
     private $conf;//模板配置
     private $tempext;//模板扩展名
@@ -17,14 +17,15 @@ class controller{
         $temptype = $this->conf['diver'];
         $this->tempext = $this->conf['ext'];
 
-        if( $temptype=='heephp'){
+        if( $temptype=='php'){
             $this->tempdriver = new heephpTemplate();
         }else if($temptype=='smarty'){
             $this->tempdriver = new smartyTemplate();
 
         }else
         {
-            throw new sysExcption("未知的模板引擎：".$this->temptype);
+            throw new sysExcption("未知的模板引擎：".$temptype);
+            return;
         }
 
         aop('controller_init');
@@ -32,7 +33,7 @@ class controller{
     }
 
     public function assign($name,$value){
-        $this->_pagevar[]=[$name=>$value];
+        //$this->_pagevar[]=[$name=>$value];
         $this->tempdriver->assign($name,$value);
     }
 
@@ -57,7 +58,6 @@ class controller{
 
         //调用调试
         trace::page_trace();
-
 
         if (!is_file($template_dir.$viewpage)) {
             throw new sysExcption('模板文件' . $template_dir.$viewpage . '不存在！');
@@ -154,7 +154,7 @@ class controller{
     {
         if(!method_exists($this,'Empty'))
             if(config('debug'))
-                return '控制器：'.CONTROLLER.'方法：'.$name.' 不存在';
+                throw new sysExcption('控制器：'.CONTROLLER.'方法：'.$name.' 不存在');
             else
                 return '您访问的页面不存在！';
         else

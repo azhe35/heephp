@@ -2,7 +2,7 @@
 namespace heephp;
 
 class console{
-
+/*
     public function __construct()
     {
         define('STDIN', fopen('php://stdin', 'r'));
@@ -26,5 +26,5 @@ class console{
     public static function read(){
         return fgets(STDIN);
     }
-
+*/
 }
