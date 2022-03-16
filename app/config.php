@@ -3,7 +3,7 @@ return [
     'default_app'=>'index',
     'default_controller'=>'index',
     'default_method'=>'index',
-    'command_controller'=>'command',
+    //'command_controller'=>'command',
     'debug'=>true,
     'logger'=>true,
     'pagesize'=>5,
@@ -12,6 +12,7 @@ return [
     'success_page'=>'message/sysSuccess.php',
     'error_page'=>'message/sysError.php',
     'validata_code_session'=>'_validata_code_session_',//验证码的Session字段
+    'content-type'=>'html',//输出类型 json html
     'template'=>[
         'diver'=>'smarty',
         'ext'=>'html',
@@ -27,7 +28,6 @@ return [
         'charset'=>'utf8',
         'timeformat'=>'Y-m-d H:i:s',
         'dateformat'=>'Y-m-d',
-
     ],
 
     'pagination'=>[

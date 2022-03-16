@@ -13,7 +13,10 @@ class sysExcption extends \Exception
 
     public function show(){
         if(!config('debug')){
-            return '页面出错~<br><br><a href="http://www.heephp.com" target="_blank">heephp</a>';
+            if(config('content-type')!='json')
+                return '页面出错~<br><br><a href="http://www.heephp.com" target="_blank">heephp</a>';
+            else
+                return '{"success":false,"code":500,"msg":"页面出错~"}';
         }
 
         $msg = $this->message;
@@ -23,12 +26,15 @@ class sysExcption extends \Exception
         $trace = $this->getTraceAsString();
         $traces = empty($this->traces)?$this->getTrace():$this->traces;
 
-        ob_start();
-        include_once 'message/sysExcption.php';
-        $content = ob_get_contents();
-        ob_end_clean();
+        if(config('content-type')!='json') {
+            ob_start();
+            include_once 'message/sysExcption.php';
+            $content = ob_get_contents();
+            ob_end_clean();
 
-        return $content;
+            return $content;
+        }else
+            return '{"success":false,"code":500,"msg":"'.$msg.'","line":'.$line.',"file":"'.$file.'"}';
     }
 
     public function __toString(){

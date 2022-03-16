@@ -14,10 +14,10 @@ class smartyTemplate implements templateInterface
     function __construct()
     {
         $this->smarty = new \Smarty();
-        $this->smarty->setCompileDir(ROOT.'/runtime/smarty/templates_c/');
+        $this->smarty->setCompileDir(ROOT.'/runtime/templates/compile/');
         $smarty_config_dir = config('template.smarty_config_dir');
         $this->smarty->setConfigDir(ROOT.(empty($smarty_config_dir)?'/app/config/':$smarty_config_dir));
-        $this->smarty->setCacheDir(ROOT.'/runtime/smarty/cache/');
+        $this->smarty->setCacheDir(ROOT.'/runtime/templates/cache/');
 
     }
 

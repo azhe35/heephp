@@ -53,7 +53,7 @@ class route
      * @param $dir  目录名
      * @param $path  控制器
      */
-    public static function dir($dir,$path){
+    public static function dir( $dir, $path){
 
         if (is_array($dir)) {
             throw new sysExcption('路由目录只能为字符串');
@@ -84,6 +84,7 @@ class route
      * 将域名规则匹配到 控制器 或 控制器方法 或 回调函数
      * @param $rule
      * @param $path
+     * @throws sysExcption
      */
     public static function domain($rule, $path='')
     {
@@ -103,7 +104,7 @@ class route
     /**
      * 将规则匹配到 文件
      * @param $rule
-     * @param $path
+     * @param $file
      */
     public static function file($rule, $file)
     {
@@ -113,7 +114,7 @@ class route
     /**
      * 将规则匹配到 文件
      * @param $rule
-     * @param $path
+     * @param $url
      */
     public static function redirect($rule, $url)
     {
@@ -221,7 +222,7 @@ class route
     /**
      * 注册pagetag以过滤url中的page参数
      */
-    public function reg_pagetag($tag)
+    /*public function reg_pagetag($tag)
     {
         $_pagetag = request('session.page_parms_tags');
 
@@ -236,13 +237,13 @@ class route
             request('session.page_parms_tags', $_pagetag);
         }
 
-    }
+    }*/
 
-    public function get_pagetag()
+    /*public function get_pagetag()
     {
         $_pagetag = request('session.page_parms_tags');
         return $_pagetag;
-    }
+    }*/
 
     /**
      * 解析URL并获取域名信息
@@ -376,7 +377,7 @@ class route
     {
         //识别page
         //-----------------------
-        $page=[];
+        /*$page=[];
         $pagetags = $this->get_pagetag();
         if (is_array($pagetags)) {
             foreach ($pagetags as $p) {
@@ -390,7 +391,7 @@ class route
                 }
             }
         }
-
+*/
         //识别app controller method parms
         $parms = [];
         if (APPS) {
@@ -423,7 +424,7 @@ class route
         $re['controller'] = empty($controller) ? config('default_controller') : $controller;
         $re['method'] = empty($method) ? config('default_method') : $method;
         $re['parms'] = $parms;
-        $re['page'] = $page;
+        //$re['page'] = $page;
 
         return $re;
     }

@@ -3,7 +3,7 @@ namespace heephp;
 
 error_reporting(E_ERROR | E_PARSE);
 define('SOFTNAME','heephp');
-define('VERSION','3.38');
+define('VERSION','5.1');
 define('ROOT',dirname($_SERVER["DOCUMENT_ROOT"]));
 
 include_once 'function.php';
@@ -93,37 +93,37 @@ class heephp
     private function mvc($uinfo)
     {
         //判断是否是控制台运行
-        $iscli = (php_sapi_name() == 'cli');
+        /*$iscli = (php_sapi_name() == 'cli');
         if ($iscli) {
             $app = config('default_app');
             $controller = config('command_controller');
             $method = 'index';
             $parms = request('server.argv');
-            $page = 0;
+            //$page = 0;
 
-        } else {
+        } else {*/
             //获取应用-控制器-方法名，参数信息
             $app = $uinfo['app'];
             $controller = $uinfo['controller'];
             $method = $uinfo['method'];
             $parms = $uinfo['parms'];
-            $page = $uinfo['page'];
+            //$page = $uinfo['page'];
 
-        }
+        //}
         //urlpaser($app, $controller, $method, $parms);
 
         define('APP', $app);
         define('CONTROLLER', $controller);
         define('METHOD', $method);
         define('PARMS', $parms);
-        define('PAGE', $page);
+        //define('PAGE', $page);
 
         //检查是否控制台访问的控制器
-        if ($controller == config('command_controller') && !$iscli) {
+        /*if ($controller == config('command_controller') && !$iscli) {
             $ex = new sysExcption($controller . '控制器仅支持通过控制台访问');
             echo $ex->show();
             exit;
-        }
+        }*/
 
         aop('app_loaded');
 
@@ -153,11 +153,19 @@ class heephp
             }
 
         } catch (\heephp\sysExcption $e) {
-            echo $e->show();
+                echo $e->show();
             exit;
         }
 
-        echo $reinfo;
+        //根据输出类型判断输出内容
+        if(config('content-type')!='json')
+            echo $reinfo;
+        else {
+            if(is_array($reinfo)||is_object($reinfo))
+                echo json($reinfo);
+            else
+                echo $reinfo;
+        }
     }
 
 }

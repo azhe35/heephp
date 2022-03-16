@@ -113,22 +113,22 @@ class model extends orm {
     /** 分页获取数据
      * @return array 仅返回获取到的数据   分页使用$this->pager获取
      */
-    public function page(){
+    public function page($page,$pagesize){
 
         $where=$this->where;
         $order=$this->order;
         $fields=empty($this->fields)?' * ':$this->fields;
-        $pname=$this->pageparm;
+        //$pname=$this->pageparm;
         //路由中注册pagetag
-        \heephp\route::create()->reg_pagetag(empty($pname)?'page':$pname);
+        //\heephp\route::create()->reg_pagetag(empty($pname)?'page':$pname);
 
         if(empty($where))
             $where='1=1';
         else
             $where=$this->softdelwhere();
 
-        $pagesize=config('pagesize')??20;
-        $page=PAGE[$pname]??1;
+        //$pagesize=config('pagesize')??20;
+        //$page=PAGE[$pname]??1;
 
         $re=[];
         $count=$this->count('*','c')->value('c');
@@ -145,7 +145,7 @@ class model extends orm {
         $data=parent::select();
         $this->get_autofield($data);
 
-        $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],PARMS,$pname);
+        $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],PARMS/*page*/);
 
         $this->pager = $re;
         $this->data = $data;

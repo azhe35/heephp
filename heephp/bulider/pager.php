@@ -7,16 +7,16 @@ class pager{
 
     }
 
-    public function bulider($page,$pagecount,$urlparms,$pname,$other=''){
+    public function bulider($page,$pagecount,$urlparms/*,$pname*/,$other=''){
         //构造url
         $path='/'.APP.'/'.CONTROLLER.'/'.METHOD;
         //$url = url($path,array_merge($parms,[$pname.'_'.$page]));
-        $firstpage=url($path,array_merge($urlparms,[$pname.'_1'])).'?'.$other;
-        $prvpage2=url($path,array_merge($urlparms,[$pname.'_'.($page-2)])).'?'.$other;
-        $prvpage=url($path,array_merge($urlparms,[$pname.'_'.($page-1)])).'?'.$other;
-        $nextpage=url($path,array_merge($urlparms,[$pname.'_'.($page+1)])).'?'.$other;
-        $nextpage2=url($path,array_merge($urlparms,[$pname.'_'.($page+2)])).'?'.$other;
-        $endpage=url($path,array_merge($urlparms,[$pname.'_'.$pagecount])).'?'.$other;
+        $firstpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_1'])*/).'?'.$other;
+        $prvpage2=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page-2)])*/).'?'.$other;
+        $prvpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page-1)])*/).'?'.$other;
+        $nextpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page+1)])*/).'?'.$other;
+        $nextpage2=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page+2)])*/).'?'.$other;
+        $endpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.$pagecount])*/).'?'.$other;
 
 
 

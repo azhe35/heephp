@@ -17,7 +17,7 @@ class trace{
 
     public static function page_trace()
     {
-        if(config('debug')==true) {
+        if(config('debug')==true&&config('content-type')!='json') {
             $traces = debug_backtrace();
             $sqls = trace::$sqls;
             //加载显示完成后 清空记录

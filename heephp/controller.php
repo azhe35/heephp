@@ -36,7 +36,7 @@ class controller{
         $this->tempdriver->assign($name,$value);
     }
 
-    public function fetch($viewpage=''){
+    public function fetch($viewpage='') {
 
         //判断是否是否使用独立目录
         $template_dir = $this->conf['dir'];

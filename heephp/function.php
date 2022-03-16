@@ -20,15 +20,15 @@ function request($name, $value = '')
         //$value = '';
 
         list($action, $var/*,$value*/) = explode('.', $name);
-        if ($action == 'get' || $action == 'g' || $action == "GET" || $action == 'G') {
+        if ($action == 'get') {
             if (empty($var))
                 return inputfilter($gets);
             return inputfilter($gets[$var] ?? '');
-        } else if ($action == 'post' || $action == 'p' || $action == "POST" || $action == 'P') {
+        } else if ($action == 'post') {
             if (empty($var))
                 return inputfilter($posts);
             return inputfilter($posts[$var] ?? '');
-        } else if ($action == 'server' || $action == 'ser') {
+        } else if ($action == 'server') {
             return $_SERVER[$var];
         } else if ($action == 'session') {
             if(is_null($value)){
