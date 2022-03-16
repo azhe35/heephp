@@ -23,7 +23,7 @@ return [
         'db_port' => '3306',
         'db_username' => 'root',
         'db_password' => '123456',
-        'db_name' => 'heeapi',
+        'db_name' => '',
         'table_prefix'=>'',
         'charset'=>'utf8',
         'timeformat'=>'Y-m-d H:i:s',
