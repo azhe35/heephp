@@ -31,10 +31,9 @@ function request($name, $value = '')
         } else if ($action == 'server') {
             return $_SERVER[$var];
         } else if ($action == 'session') {
-            if(is_null($value)){
+            if (is_null($value)) {
                 unset($_SESSION[$var]);
-            }
-            else if ($value==='') {
+            } else if ($value === '') {
                 return $_SESSION[$var];
             } else {
                 $_SESSION[$var] = $value;
@@ -44,7 +43,7 @@ function request($name, $value = '')
             if (empty($value))
                 return $_COOKIE[$var];
             else {
-                setcookie($var, $value, time()+60*60*24*30);
+                setcookie($var, $value, time() + 60 * 60 * 24 * 30);
                 return $_COOKIE[$var];
             }
         }
@@ -81,7 +80,7 @@ function cache($name = '', $value = '', $exp_time = 1)
     }
 }
 
-function mulit_uploadfile($fname, $allowedExts, $allowfilesize, $dir='', $nametype = 'md5')
+function mulit_uploadfile($fname, $allowedExts, $allowfilesize, $dir = '', $nametype = 'md5')
 {
     $files = $_FILES[$fname];
 
@@ -93,7 +92,7 @@ function mulit_uploadfile($fname, $allowedExts, $allowfilesize, $dir='', $namety
             'name' => $files['name'][$i],
             'type' => $files['type'][$i],
             'tmp_name' => $files['tmp_name'][$i],
-            'source_name'=>$files['source_name'][$i],
+            'source_name' => $files['source_name'][$i],
             'error' => $files['error'][$i],
             'size' => $files['size'][$i]
         ];
@@ -107,19 +106,20 @@ function mulit_uploadfile($fname, $allowedExts, $allowfilesize, $dir='', $namety
     }
     return ['success' => $success, 'fail' => $fails];
 }
+
 /*
  * 上传文件
  */
-function uploadfile($fname, $allowedExts, $allowfilesize, $dir='', $nametype = 'md5',$file=[])
+function uploadfile($fname, $allowedExts, $allowfilesize, $dir = '', $nametype = 'md5', $file = [])
 {
-    if(empty($dir)) {
+    if (empty($dir)) {
         $dir1 = '/uploads/' . date('Ymd') . '/';
         $dir = ROOT . '/public' . $dir1;
-    }else
+    } else
         $dir1 = $dir;
 
 
-    if(empty($file))
+    if (empty($file))
         $file = $_FILES[$fname];
 
     $info = [];
@@ -171,15 +171,15 @@ function uploadfile($fname, $allowedExts, $allowfilesize, $dir='', $nametype = '
         if ($nametype == 'timespan')
             $filename = time() . rand(1, 999999) . '.' . $extension;
         else if ($nametype == 'guid')
-            $filename = str_replace(['-','{','}'],['','',''],guid()) . '.' . $extension;
+            $filename = str_replace(['-', '{', '}'], ['', '', ''], guid()) . '.' . $extension;
 
         $info['dir'] = $dir1;
         $info['name'] = $filename;
         $info['ext'] = $extension;
-        $info['fullpath'] = $dir  . $filename;
+        $info['fullpath'] = $dir . $filename;
 
 
-        move_uploaded_file($file["tmp_name"], $dir  . $filename);
+        move_uploaded_file($file["tmp_name"], $dir . $filename);
         return $info;
 
     }
@@ -256,7 +256,8 @@ function escapeString($content)
  * 删除有request增加的转义
  * @param val $
  */
-function reqhtml($val){
+function reqhtml($val)
+{
     return stripslashes(html_entity_decode($val));
 }
 
@@ -334,11 +335,11 @@ function vercode($code = '', $fontsize = 20, $width = 80, $height = 25, $linecou
     request('session.' . config('validata_code_session'), $code);
 
     $heeimg = new heeimages();
-    $heeimg->fromNew($width,$height,'darkblue');
-    for ($i=0;$i<$linecount;$i++){
-        $heeimg->line(mt_rand(0,$width),mt_rand(0,$height),mt_rand(0,$width),mt_rand(0,$height),'#ccc');
+    $heeimg->fromNew($width, $height, 'darkblue');
+    for ($i = 0; $i < $linecount; $i++) {
+        $heeimg->line(mt_rand(0, $width), mt_rand(0, $height), mt_rand(0, $width), mt_rand(0, $height), '#ccc');
     }
-    $heeimg->text($code,['fontFile'=>ROOT.'/heephp/res/font/arial.ttf','size'=>$fontsize,'color'=>'#fff'])->toScreen();
+    $heeimg->text($code, ['fontFile' => ROOT . '/heephp/res/font/arial.ttf', 'size' => $fontsize, 'color' => '#fff'])->toScreen();
     unset($heeimg);
 }
 
@@ -383,7 +384,7 @@ function sendmail($to, $subject, $body, $attachment = '', $conf = [])
  * 生成URL路径
  * @path 路径
  */
-function url($path, $parm = '',$havesuffix=true,$domain='')
+function url($path, $parm = '', $havesuffix = true, $domain = '')
 {
 
     //清除多余字符
@@ -398,9 +399,9 @@ function url($path, $parm = '',$havesuffix=true,$domain='')
         $result_url = $path;
     } else {
         if (APPS) {
-            if(count($allpath)==2&&!empty($allpath[1])){
+            if (count($allpath) == 2 && !empty($allpath[1])) {
                 $result_url = '/' . APP . '/' . $path;
-            }else
+            } else
                 $result_url = '/' . APP . '/' . CONTROLLER . '/' . $path;
         } else
             $result_url = '/' . CONTROLLER . '/' . $path;
@@ -415,27 +416,27 @@ function url($path, $parm = '',$havesuffix=true,$domain='')
 
     //反向匹配路由
     $result_url = route::create()->rematch($result_url);
-    $result_url = rtrim ($result_url,'/');
+    $result_url = rtrim($result_url, '/');
     //增加后缀
     $format_suffix = $havesuffix ? config('format_suffix') : '';
     $format_suffix = (empty($format_suffix) ? '' : ('.' . $format_suffix));
 
-    return $domain.$result_url . $format_suffix;
+    return $domain . $result_url . $format_suffix;
 }
 
-function config($name='',$value='')
+function config($name = '', $value = '')
 {
-    if(empty($value)) {
+    if (empty($value)) {
         $config = \heephp\config::get($name);
-    }else{
-        $config = \heephp\config::set($name,$value);
+    } else {
+        $config = \heephp\config::set($name, $value);
     }
     return $config;
 }
 
 function db()
 {
-    $db=null;
+    $db = null;
     $dbconfig = config('db.');
 
     if ($dbconfig['diver'] == 'pdo')
@@ -470,7 +471,8 @@ function model($table)
 }
 
 //orm
-function table($table){
+function table($table)
+{
     $orm = new \heephp\orm\orm();
     return $orm->table($table);
 }
@@ -673,7 +675,8 @@ function foreach_dir($path, callable $callback)
  * @param $img_file 传入本地图片地址
  * @return string
  */
-function imgToBase64($img_file) {
+function imgToBase64($img_file)
+{
 
     $img_base64 = '';
     if (file_exists($img_file)) {
@@ -688,11 +691,14 @@ function imgToBase64($img_file) {
             $content = fread($fp, $filesize);
             $file_content = chunk_split(base64_encode($content)); // base64编码
             switch ($img_info[2]) {           //判读图片类型
-                case 1: $img_type = "gif";
+                case 1:
+                    $img_type = "gif";
                     break;
-                case 2: $img_type = "jpg";
+                case 2:
+                    $img_type = "jpg";
                     break;
-                case 3: $img_type = "png";
+                case 3:
+                    $img_type = "png";
                     break;
             }
 
@@ -756,12 +762,12 @@ function imgToBase64($img_file) {
     return array('file_name' => $filename, 'save_path' => $save_dir . $filename, 'error' => 0);
 }*/
 
-function download($url,$ext, $path)
+function download($url, $ext, $path)
 {
-    if(!is_dir($path)){
-        mkdir($path,0777,true);
+    if (!is_dir($path)) {
+        mkdir($path, 0777, true);
     }
-    $filename = md5($url).'.' . $ext;
+    $filename = md5($url) . '.' . $ext;
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -787,7 +793,7 @@ function space($str)
     return str_replace($search, $replace, $str);
 }
 
-function widget($path,$parm='')
+function widget($path, $parm = '')
 {
     $path = explode('/', $path);
     if (APPS) {
@@ -812,52 +818,56 @@ function widget($path,$parm='')
     } else {
         //如果以/开头
         if ($path & '/' == '/' && count($path) > 2) {
-            $clsname = 'app/' . $path[1] ;
+            $clsname = 'app/' . $path[1];
             $cls = new $clsname();
             echo $cls->$path[2]($parm);
 
-        } elseif( count($path) > 2) {
-            $clsname = 'app/' .$path[0];
+        } elseif (count($path) > 2) {
+            $clsname = 'app/' . $path[0];
             $cls = new $clsname();
             echo $cls->$path[1]($parm);
         }
     }
 }
 
-function json($data){
-    return json_encode($data,JSON_UNESCAPED_UNICODE);
+function json($data)
+{
+    return json_encode($data, JSON_UNESCAPED_UNICODE);
 }
 
 /**
  * 生成表单验证TOKEN
  * @return string
  */
-function crsf(){
+function crsf()
+{
     $guid = guid();
     $arr_crsf = request('session.crsf');
     $arr_crsf[] = $guid;
-    request('session.crsf',$arr_crsf);
+    request('session.crsf', $arr_crsf);
     return $guid;
 }
 
 /**
  * 验证表单提交TOKEN
  */
-function check_crsf(){
+function check_crsf()
+{
     $crsf = request('post.crsf');
-    $crsf = empty($crsf)?request('get.crsf'):$crsf;
-    if(empty($crsf))
+    $crsf = empty($crsf) ? request('get.crsf') : $crsf;
+    if (empty($crsf))
         return false;
 
     $arr_crsf = request('session.crsf');
-    $exits = in_array($crsf,$arr_crsf);
-    if($exits)
-        array_diff($arr_crsf,[$crsf]);
+    $exits = in_array($crsf, $arr_crsf);
+    if ($exits)
+        array_diff($arr_crsf, [$crsf]);
     return $exits;
 }
 
 
-function exhtml($html){
+function exhtml($html)
+{
     return stripslashes(html_entity_decode($html));
 }
 
@@ -870,13 +880,13 @@ spl_autoload_register(function ($class_name) {
     $file = './../' . $class_name . '.php';
 
     if (is_file($file)) {
-        include_once($file) ;
+        include_once($file);
         return;
     } else {
         foreach_dir('./../vendor/', function ($val, $path) use ($class_name) {
             $file = './../vendor/' . $val . '/' . $class_name . '.php';//echo $file.'<br>';
             if (is_file($file)) {
-                include_once($file) ;
+                include_once($file);
 
                 /* $dir = dirname($file);
                  //取类目录中所有文件
