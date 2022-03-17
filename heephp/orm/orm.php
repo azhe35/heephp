@@ -494,7 +494,7 @@ class orm
     /** 分页获取数据
      * @return array 仅返回获取到的数据   分页使用$this->pager获取
      */
-    public function page($page,$pagesize){
+    public function page($page,$pagesize,$pageParmPostion=0){
 
         $where=$this->where;
         $order=$this->order;
@@ -522,7 +522,7 @@ class orm
         $this->limit(($page<=1)?"0,$pagesize":((($page-1)*$pagesize).','.$pagesize));
         $data=$this->select();
 
-        $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],PARMS/*,$pname*/);
+        $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],$pageParmPostion);
 
         $redata['pager'] = $re;
         $redata['data'] = $data;

@@ -7,17 +7,30 @@ class pager{
 
     }
 
-    public function bulider($page,$pagecount,$urlparms/*,$pname*/,$other=''){
+    public function bulider($page,$pagecount,$page_parm_postion=0,/*$urlparms,$pname,*/$other=''){
         //构造url
-        $path='/'.APP.'/'.CONTROLLER.'/'.METHOD;
-        //$url = url($path,array_merge($parms,[$pname.'_'.$page]));
-        $firstpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_1'])*/).'?'.$other;
-        $prvpage2=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page-2)])*/).'?'.$other;
-        $prvpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page-1)])*/).'?'.$other;
-        $nextpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page+1)])*/).'?'.$other;
-        $nextpage2=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.($page+2)])*/).'?'.$other;
-        $endpage=url($path,$urlparms/*array_merge($urlparms,[$pname.'_'.$pagecount])*/).'?'.$other;
+        $parms = PARMS;
 
+        if(APPS)
+            $path='/'.APP.'/'.CONTROLLER.'/'.METHOD;
+        else
+            $path='/'.CONTROLLER.'/'.METHOD;
+
+        $firstpageparm=$prvpage2parm=$prvpage2parm=$prvpageparm=$nextpageparm=$nextpage2parm=$endpageparm=$parms;
+
+        $firstpageparm[$page_parm_postion]=1;
+        $prvpage2parm[$page_parm_postion]=($page-2);
+        $prvpageparm[$page_parm_postion]=($page-1);
+        $nextpageparm[$page_parm_postion]=($page+1);
+        $nextpage2parm[$page_parm_postion]=($page+2);
+        $endpageparm[$page_parm_postion]=$pagecount;
+
+        $firstpage=url($path,$firstpageparm/*array_merge($urlparms,[$pname.'_1'])*/).'?'.$other;
+        $prvpage2=url($path,$prvpage2parm/*array_merge($urlparms,[$pname.'_'.($page-2)])*/).'?'.$other;
+        $prvpage=url($path,$prvpageparm/*array_merge($urlparms,[$pname.'_'.($page-1)])*/).'?'.$other;
+        $nextpage=url($path,$nextpageparm/*array_merge($urlparms,[$pname.'_'.($page+1)])*/).'?'.$other;
+        $nextpage2=url($path,$nextpage2parm/*array_merge($urlparms,[$pname.'_'.($page+2)])*/).'?'.$other;
+        $endpage=url($path,$endpageparm/*array_merge($urlparms,[$pname.'_'.$pagecount])*/).'?'.$other;
 
 
         $pagerclass=' class="'.config('pagination.class').'"';
@@ -38,6 +51,7 @@ class pager{
         $pager.=$pagecount>$page?"<li$pageritemclass><a$pagerlinkclass href=\"$endpage\">尾页</a></li>":'';
         $pager.='   第'.$page.'/'.$pagecount.'页';
         $pager.='</ul>';
+
         return $pager;
     }
 

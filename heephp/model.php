@@ -113,7 +113,7 @@ class model extends orm {
     /** 分页获取数据
      * @return array 仅返回获取到的数据   分页使用$this->pager获取
      */
-    public function page($page,$pagesize){
+    public function page($page,$pagesize,$pageParmPostion=0){
 
         $where=$this->where;
         $order=$this->order;
@@ -145,7 +145,7 @@ class model extends orm {
         $data=parent::select();
         $this->get_autofield($data);
 
-        $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],PARMS/*page*/);
+        $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],$pageParmPostion);
 
         $this->pager = $re;
         $this->data = $data;
