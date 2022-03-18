@@ -161,9 +161,10 @@ class heephp
         if(config('content-type')!='json')
             echo $reinfo;
         else {
-            if(is_array($reinfo)||is_object($reinfo))
+            if(is_array($reinfo)||is_object($reinfo)) {
+                json_header();
                 echo json($reinfo);
-            else
+            }else
                 echo $reinfo;
         }
     }

@@ -829,7 +829,9 @@ function widget($path, $parm = '')
         }
     }
 }
-
+function json_header(){
+    header("Content-type:application/json;charset=utf-8");
+}
 function json($data)
 {
     return json_encode($data, JSON_UNESCAPED_UNICODE);

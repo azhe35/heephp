@@ -155,6 +155,7 @@ class validata{
         $error = validata::$last_error;
 
         if(config('content-type')=='json'){
+            json_header();
             echo json(['success'=>false,'code'=>202,'msg'=>$error['title'].'失败：'.$error['msg'].' 字段:'.$error['field']]);
             exit;
         }

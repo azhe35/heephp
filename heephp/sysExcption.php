@@ -15,8 +15,10 @@ class sysExcption extends \Exception
         if(!config('debug')){
             if(config('content-type')!='json')
                 return '页面出错~<br><br><a href="http://www.heephp.com" target="_blank">heephp</a>';
-            else
+            else {
+
                 return '{"success":false,"code":500,"msg":"页面出错~"}';
+            }
         }
 
         $msg = $this->message;
@@ -33,8 +35,10 @@ class sysExcption extends \Exception
             ob_end_clean();
 
             return $content;
-        }else
-            return '{"success":false,"code":500,"msg":"'.$msg.'","line":'.$line.',"file":"'.$file.'"}';
+        }else {
+
+            return '{"success":false,"code":500,"msg":"' . $msg . '","line":' . $line . ',"file":"' . $file . '"}';
+        }
     }
 
     public function __toString(){
