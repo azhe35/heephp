@@ -153,6 +153,12 @@ class validata{
 
     public static function showerror(){
         $error = validata::$last_error;
+
+        if(config('content-type')=='json'){
+            echo json(['success'=>false,'code'=>202,'msg'=>'数据验证失败：'.$error]);
+            exit;
+        }
+
         include config('validata_error_page');
         exit;
     }
