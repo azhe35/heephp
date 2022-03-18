@@ -94,7 +94,10 @@ class controller{
     }
 
     public function success($msg,$url,$stoptime=1){
-
+        if(config('content-type')=='json')
+        {
+            return ['success'=>true,'code'=>200,'msg'=>$msg];
+        }
         ob_start();
 
         include config('success_page');
@@ -106,6 +109,11 @@ class controller{
     }
 
     public function error($msg,$url='',$stoptime=1){
+        if(config('content-type')=='json')
+        {
+            return ['success'=>false,'code'=>201,'msg'=>$msg];
+        }
+
         $url = empty($url)?$_SERVER["HTTP_REFERER"]:$url;
 
         ob_start();
