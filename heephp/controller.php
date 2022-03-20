@@ -17,7 +17,7 @@ class controller{
         $temptype = $this->conf['diver'];
         $this->tempext = $this->conf['ext'];
 
-        if( $temptype=='php'){
+        if( $temptype=='heephp'){
             $this->tempdriver = new heephpTemplate();
         }else if($temptype=='smarty'){
             $this->tempdriver = new smartyTemplate();
@@ -38,20 +38,26 @@ class controller{
     }
 
     public function fetch($viewpage='') {
-
         //判断是否是否使用独立目录
         $template_dir = $this->conf['dir'];
         $template_dir = empty($template_dir)?'':($template_dir.'/');
 
-        $viewpage = empty($viewpage) ? METHOD : $viewpage;
 
-        if ($template_dir != '')
-            $template_dir = './../' . $template_dir. CONTROLLER . '/';
-        else {
+
+        if ($template_dir != '') {
+            //if(APPS)
+            //    $template_dir = './../../' . $template_dir . CONTROLLER . '/';
+            //else
+            $template_dir = './../' . $template_dir.config('skin').'/' ;
+
+            $viewpage = empty($viewpage) ? CONTROLLER . '/'.METHOD : $viewpage;
+        }else {
             if (APPS)
                 $template_dir = './../app/' . APP . '/view/'. CONTROLLER . '/';
             else
                 $template_dir = './../app/view/'. CONTROLLER . '/';
+
+            $viewpage = empty($viewpage) ? METHOD : $viewpage;
         }
 
         $viewpage=$viewpage.'.'.$this->tempext;
@@ -94,6 +100,7 @@ class controller{
     }
 
     public function success($msg,$url,$stoptime=1){
+
         if(config('content-type')=='json')
         {
             return ['success'=>true,'code'=>200,'msg'=>$msg];
