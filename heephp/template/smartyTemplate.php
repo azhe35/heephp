@@ -19,6 +19,7 @@ class smartyTemplate implements templateInterface
         $this->smarty->setConfigDir(ROOT.(empty($smarty_config_dir)?'/app/config/':$smarty_config_dir));
         $this->smarty->setCacheDir(ROOT.'/runtime/templates/cache/');
 
+
     }
 
     function assign($name, $value)
@@ -29,6 +30,17 @@ class smartyTemplate implements templateInterface
     function fetch($basetemplatedir,$viewpage)
     {
         $this->smarty->setTemplateDir($basetemplatedir);
-        $this->smarty->display($viewpage);
+        $content = $this->smarty->fetch($basetemplatedir.$viewpage);
+
+        //html字符替换
+        $html_replace = config('html_replace');
+        if (is_array($html_replace) && count($html_replace) > 0) {
+            foreach ($html_replace as $k => $v) {
+                $content = str_replace($k, $v, $content);
+            }
+        }
+
+        return $content;
+
     }
 }
