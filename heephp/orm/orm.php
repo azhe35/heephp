@@ -511,7 +511,7 @@ class orm
 
         $re=[];
         $count=$this->count('*','c')->value('c');
-        $re['count'] = $count;
+        $re['count'] = is_array($count)?count($count):$count;
         $re['pagesize']=$pagesize;
         $re['page']=$page;
         $re['pagecount']=ceil($count / $pagesize);
