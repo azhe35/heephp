@@ -17,13 +17,14 @@ class redis implements cacheInterface{
         $conf = $conf['redis'];
 
         $this->redis=new \Redis();
+
         if(!$this->redis->connect($conf['host'],$conf['port'])){
 
             throw new sysExcption('Redis 服务器连接失败：'.$conf['host'].'.'.$conf['port']);
 
         }
 
-
+        $this->redis->auth($conf['password']);
     }
 
     public function get($key)

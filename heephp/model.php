@@ -118,32 +118,27 @@ class model extends orm {
         $where=$this->where;
         $order=$this->order;
         $fields=empty($this->fields)?' * ':$this->fields;
-        //$pname=$this->pageparm;
-        //路由中注册pagetag
-        //\heephp\route::create()->reg_pagetag(empty($pname)?'page':$pname);
 
         if(empty($where))
             $where='1=1';
         else
             $where=$this->softdelwhere();
 
-        //$pagesize=config('pagesize')??20;
-        //$page=PAGE[$pname]??1;
-
         $re=[];
-        $count=$this->count('*','c')->value('c');
-        $count = empty($count)?0:$count;
-        $re['count'] = $count;
-        $re['pagesize']=$pagesize;
-        $re['page']=$page;
-        $re['pagecount']=ceil($count / $pagesize);
 
         $this->where($where);
         $this->order($order);
         $this->field($fields);
+        $sql = $this->sql(false);
         $this->limit(($page<=1)?"0,$pagesize":((($page-1)*$pagesize).','.$pagesize));
         $data=parent::select();
         $this->get_autofield($data);
+
+        $count=$this->db->getOne("select count(*) c from ($sql) a");
+        $re['count'] = $count;
+        $re['pagesize']=$pagesize;
+        $re['page']=$page;
+        $re['pagecount']=ceil($count / $pagesize);
 
         $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],$pageParmPostion);
 

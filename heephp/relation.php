@@ -128,7 +128,7 @@ class relation{
 
             //$parms = ['`'.$this->fkey.'`=\''.$tdata[$this->key].'\'', , '*', $onlysoftdel, $pageparm];
             //call_user_func_array([$this->rmodel, $method], $parms);
-            $this->rmodel
+            $tr = $this->rmodel
                 ->where('`'.$this->fkey.'`=\''.$tdata[$this->key].'\'')
                 ->order(empty($this->rmodel_order)?"$this->fkey asc":$this->rmodel_order)
                 //->pageparm($pageparm)
@@ -259,7 +259,7 @@ class relation{
 
         }
 
-        $this->model->data=$tdata;
+            $this->model->data=$tdata;
 
         return $this;
 
@@ -356,24 +356,24 @@ class relation{
 
             }
 
-            //如果为字符串 用,分割的Id
-            //清除中间表数据库中没有
-            $midmodel=model($this->mid_table);
-            $sql= '`'.$this->key."`='".$tdata[$this->key]."'";
-            if(!empty($data))
-                $sql.=" and $this->fkey not in (".$data.")";
-            $midmodel->where($sql)->delete();
+                //如果为字符串 用,分割的Id
+                //清除中间表数据库中没有
+                $midmodel=model($this->mid_table);
+                $sql= '`'.$this->key."`='".$tdata[$this->key]."'";
+                if(!empty($data))
+                    $sql.=" and $this->fkey not in (".$data.")";
+                $midmodel->where($sql)->delete();
 
-            //新增中间表没有的数据
-            $rearr = [];
-            $ds = explode(',',$data);
-            foreach ($ds as $item) {
-                if(empty($item))
-                    continue;
-                $rearr = $midmodel->insert([$this->key => $tdata[$this->key], $this->fkey => $item]);
-            }
+                //新增中间表没有的数据
+                $rearr = [];
+                $ds = explode(',',$data);
+                foreach ($ds as $item) {
+                    if(empty($item))
+                        continue;
+                    $rearr = $midmodel->insert([$this->key => $tdata[$this->key], $this->fkey => $item]);
+                }
 
-            return $rearr;
+                return $rearr;
 
 
         }

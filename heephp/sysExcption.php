@@ -16,7 +16,6 @@ class sysExcption extends \Exception
             if(config('content-type')!='json')
                 return '页面出错~<br><br><a href="http://www.heephp.com" target="_blank">heephp</a>';
             else {
-
                 return '{"success":false,"code":500,"msg":"页面出错~"}';
             }
         }
@@ -36,7 +35,6 @@ class sysExcption extends \Exception
 
             return $content;
         }else {
-
             return '{"success":false,"code":500,"msg":"' . $msg . '","line":' . $line . ',"file":"' . $file . '"}';
         }
     }

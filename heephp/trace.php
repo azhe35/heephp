@@ -27,7 +27,7 @@ class trace{
             include 'message/trace.php';
             $content = ob_get_contents();
             ob_end_clean();
-            echo $content;
+            return $content;
         }
     }
 

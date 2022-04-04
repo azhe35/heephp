@@ -63,13 +63,13 @@ class controller{
         $viewpage=$viewpage.'.'.$this->tempext;
 
         //调用调试
-        trace::page_trace();
+        $tracecontent = trace::page_trace();
 
         if (!is_file($template_dir.$viewpage)) {
             throw new sysExcption('模板文件' . $template_dir.$viewpage . '不存在！');
         }
 
-        return $this->tempdriver->fetch($template_dir,$viewpage);
+        return $this->tempdriver->fetch($template_dir,$viewpage).$tracecontent;
 
     }
 

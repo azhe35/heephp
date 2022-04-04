@@ -1,5 +1,7 @@
 <?php
+
 namespace heephp\orm;
+
 use heephp\config;
 use heephp\sysExcption;
 use heephp\trace;
@@ -18,14 +20,15 @@ class orm
     //private $model='';
     protected $sql = '';
     protected $issoftdel = false;
-    protected $cache=false;
+    protected $cache = false;
     protected $pageparm = 'page';
-    protected $key='';
+    protected $key = '';
     protected $db;
 
     public function __construct()
     {
-        $this->db=db();
+        $this->db = db();
+        $this->cache = config::get('db.cache');
     }
 
     public function from($table)
@@ -53,7 +56,7 @@ class orm
 
     public function where($where)
     {
-        $this->where='';
+        $this->where = '';
         $relation = '';
         if (!empty($this->where))
             $relation = ' and ';
@@ -199,7 +202,8 @@ class orm
         return $this;
     }
 
-    public function whereEmpty($field){
+    public function whereEmpty($field)
+    {
         $relation = '';
         if (!empty($this->where))
             $relation = ' and ';
@@ -286,12 +290,12 @@ class orm
         return $this;
     }
 
-    public function count($field='*', $alias = '')
+    public function count($field = '*', $alias = '')
     {
         if (!empty($this->fields))
             $this->fields .= ',';
 
-        $field=empty($field)?'*':$field;
+        $field = empty($field) ? '*' : $field;
         $this->fields .= "count($field) $alias";
         return $this;
     }
@@ -320,14 +324,15 @@ class orm
         return $this;
     }
 
-    public function softdel($issoft=true)
+    public function softdel($issoft = true)
     {
         $this->issoftdel = $issoft;
         return $this;
     }
 
-    public function cache($iscache=true){
-        $this->cache=$iscache;
+    public function cache($iscache = true)
+    {
+        $this->cache = $iscache;
         return $this;
     }
 
@@ -349,14 +354,15 @@ class orm
         return $data;
     }
 
-    public function select(){
+    public function select()
+    {
         return $this->all();
     }
 
     public function get($id = '')
     {
         if (!empty($id)) {
-            $this->where =" `$this->key` = '$id'";
+            $this->where = " `$this->key` = '$id'";
         }
 
         return $this->get_data_from_cache('getRow');
@@ -391,18 +397,18 @@ class orm
         }
     }
 
-    public function value($field='')
+    public function value($field = '')
     {
-        if(empty($field)) {
+        if (empty($field)) {
 
             return $this->get_data_from_cache('getOne');
 
-        }else{
+        } else {
             $list = $this->all();
-            if(count($list)==1){
+            if (count($list) == 1) {
                 return $list[0][$field];
-            }else{
-                return array_column($list,$field);
+            } else {
+                return array_column($list, $field);
             }
         }
     }
@@ -412,42 +418,47 @@ class orm
         return $this->get_data_from_cache('getRow');
     }
 
-    public function pageparm($val){
-        $this->pageparm=empty($val)?'page':$val;
+    public function pageparm($val)
+    {
+        $this->pageparm = empty($val) ? 'page' : $val;
         return $this;
     }
 
-    public function table($tbname){
-        $this->table=$tbname;
+    public function table($tbname)
+    {
+        $this->table = $tbname;
         $this->key = $this->db->getKeyFiled($tbname);
         return $this;
     }
 
-    public function update($data){
-        return $this->db->update($this->table,$data,$this->where);
+    public function update($data)
+    {
+        return $this->db->update($this->table, $data, $this->where);
     }
 
-    public function insert($data){
-        return $this->db->insert($this->table,$data);
+    public function insert($data)
+    {
+        return $this->db->insert($this->table, $data);
     }
 
-    public function save($data){
+    public function save($data)
+    {
 
         $where = $this->where;
-        if(!empty($where)){
+        if (!empty($where)) {
 
             $result = $this->select();
-            if(empty($result)){
+            if (empty($result)) {
                 return self::insert($data);
-            }else{
-                $eff=self::where($where)->update($data);
-                if($eff)
+            } else {
+                $eff = self::where($where)->update($data);
+                if ($eff)
                     return $data[$this->key];
                 else
                     return false;
             }
 
-        }else {
+        } else {
 
             if (empty($data[$this->key])) {
                 return self::insert($data);
@@ -458,74 +469,83 @@ class orm
         }
     }
 
-    public function delete($id=''){
-        if(empty($id)){
-            return $this->db->delete($this->table,$this->where);
-        }else{
-            return $this->db->delete($this->table,"`$this->key`='$id''");
+    public function delete($id = '')
+    {
+        if (empty($id)) {
+            return $this->db->delete($this->table, $this->where);
+        } else {
+            return $this->db->delete($this->table, "`$this->key`='$id''");
         }
     }
 
 
-    public function sql(){
-        if(empty($this->table)){
+    public function sql($clear=true)
+    {
+        if (empty($this->table)) {
             throw new sysExcption('ORM表名为空');
             exit;
         }
-        $fileds = empty($this->fields)?'*':$this->fields;
+        $fileds = empty($this->fields) ? '*' : $this->fields;
 
-        if(method_exists($this,'softdelwhere'))
+        if (method_exists($this, 'softdelwhere'))
             $softdelwhere = $this->softdelwhere();
         else
             $softdelwhere = $this->where;
-        $where = empty($softdelwhere)?'':"where $softdelwhere";
+        $where = empty($softdelwhere) ? '' : "where $softdelwhere";
 
-        $order = empty($this->order)?'':"order by $this->order";
-        $limit = empty($this->limit)?'':"limit $this->limit";
-        $table = config('db.table_prefix').$this->table;
-        $groupby = empty($this->groupby)?'':'group by '.$this->groupby;
-        $having = empty($this->having)||empty($this->groupby)?'':'having '.$this->having;
-        $this->sql="select $fileds from $table $this->alias $this->join $where $groupby $having $order $limit";
-        $this->fields ='';
+        $order = empty($this->order) ? '' : "order by $this->order";
+        $limit = empty($this->limit) ? '' : "limit $this->limit";
+        $table = config('db.table_prefix') . $this->table;
+        $groupby = empty($this->groupby) ? '' : 'group by ' . $this->groupby;
+        $having = empty($this->having) || empty($this->groupby) ? '' : 'having ' . $this->having;
+        $this->sql = "select $fileds from $table $this->alias $this->join $where $groupby $having $order $limit";
+        //!!不能清除SQL条件， setInc setDec使用
+        //if($clear)
+         //   $this->clear();
 
         return $this->sql;
+    }
+
+    /**
+     * 清空数据 重置SQL中的条件 排序等
+     */
+    public function reset(){
+        $this->fields = $this->groupby = $this->having = $this->limit = $this->order = $this->where = '';
     }
 
     /** 分页获取数据
      * @return array 仅返回获取到的数据   分页使用$this->pager获取
      */
-    public function page($page,$pagesize,$pageParmPostion=0){
+    public function page($page, $pagesize, $pageParmPostion = 0)
+    {
 
-        $where=$this->where;
-        $order=$this->order;
-        $fields=empty($this->fields)?' * ':$this->fields;
-        //$pname=$this->pageparm;
-        //路由中注册pagetag
-        //\heephp\route::create()->reg_pagetag(empty($pname)?'page':$pname);
+        $where = $this->where;
+        $order = $this->order;
+        $fields = empty($this->fields) ? ' * ' : $this->fields;
 
-        if(empty($where))
-            $where='1=1';
+        if (empty($where))
+            $where = '1=1';
 
-        //$pagesize=config('pagesize')??20;
-        //$page=PAGE[$pname]??1;
-
-        $re=[];
-        $count=$this->count('*','c')->value('c');
-        $re['count'] = is_array($count)?count($count):$count;
-        $re['pagesize']=$pagesize;
-        $re['page']=$page;
-        $re['pagecount']=ceil($count / $pagesize);
+        $re = [];
 
         $this->where($where);
         $this->order($order);
         $this->field($fields);
-        $this->limit(($page<=1)?"0,$pagesize":((($page-1)*$pagesize).','.$pagesize));
-        $data=$this->select();
+        $sql = $this->sql(false);
+        $this->limit(($page <= 1) ? "0,$pagesize" : ((($page - 1) * $pagesize) . ',' . $pagesize));
+        $data = $this->select();
 
-        $re['show']=(new \heephp\bulider\pager())->bulider($page,$re['pagecount'],$pageParmPostion);
+        $count = $this->db->getOne("select count(*) c from ($sql) a");
+        $re['count'] = $count;
+        $re['pagesize'] = $pagesize;
+        $re['page'] = $page;
+        $re['pagecount'] = ceil($count / $pagesize);
+
+        $re['show'] = (new \heephp\bulider\pager())->bulider($page, $re['pagecount'], $pageParmPostion);
 
         $redata['pager'] = $re;
         $redata['data'] = $data;
+
         return $redata;
 
     }
